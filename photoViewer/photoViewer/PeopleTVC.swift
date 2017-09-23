@@ -15,6 +15,8 @@ class PeopleTVC: UITableViewController{
     var selectedImage:UIImage?
     var selectedName:String?
     
+    var author = [Author]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.dataSource = self
@@ -25,14 +27,28 @@ class PeopleTVC: UITableViewController{
         names.append("Alejandro Escamilla 1")
         names.append("Alejandro Escamilla 2")
         names.append("Paul Jarvis 1")
+        
+        apicall()
         self.tableView.tableFooterView = UIView()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    func apicall(){// API CALL
+        let api = APIManager()
+        api.loadData("http://unsplash.it/list", completion: didLoadData)
     }
 
+    func didLoadData(_ author:[Author]){ // DID LOAD DATA
+        
+        self.author = author
+        for item in author{
+            print("name = \(item.vAuthor)")
+        }
+        for (index, item) in author.enumerated(){
+            print("\(index) name = \(item.vAuthor)")
+        }
+        //tableView.reloadData()
+    }
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {

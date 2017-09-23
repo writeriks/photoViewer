@@ -18,6 +18,7 @@
 		5F4E12691F75B9A10079BDD2 /* ManagePagePVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4E12681F75B9A10079BDD2 /* ManagePagePVC.swift */; };
 		5F4E12701F75DB450079BDD2 /* Author.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4E126F1F75DB450079BDD2 /* Author.swift */; };
 		5F4E12721F75DC8A0079BDD2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4E12711F75DC8A0079BDD2 /* Constants.swift */; };
+		5F4E12741F75E9970079BDD2 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4E12731F75E9970079BDD2 /* ApiManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		5F4E12681F75B9A10079BDD2 /* ManagePagePVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagePagePVC.swift; sourceTree = "<group>"; };
 		5F4E126F1F75DB450079BDD2 /* Author.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Author.swift; sourceTree = "<group>"; };
 		5F4E12711F75DC8A0079BDD2 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		5F4E12731F75E9970079BDD2 /* ApiManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				5F4E126F1F75DB450079BDD2 /* Author.swift */,
+				5F4E12731F75E9970079BDD2 /* ApiManager.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -196,6 +199,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5F4E12671F749E7D0079BDD2 /* DetailVC.swift in Sources */,
+				5F4E12741F75E9970079BDD2 /* ApiManager.swift in Sources */,
 				5F4E125F1F74502B0079BDD2 /* PeopleTVC.swift in Sources */,
 				5F4E12631F7451440079BDD2 /* PhotoCell.swift in Sources */,
 				5F4E124D1F7447F70079BDD2 /* AppDelegate.swift in Sources */,
@@ -366,6 +370,7 @@
 				5F4E125D1F7447F80079BDD2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
