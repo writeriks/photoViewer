@@ -16,9 +16,9 @@ class APIManager {
         
         let session = URLSession(configuration: config)
         
-        let url = URL(string: urlString)!  // url i al
+        let url = URL(string: urlString)!  
 
-        let task = session.dataTask(with: url, completionHandler: { // url ile task oluştur içinde data, response ve error olsun
+        let task = session.dataTask(with: url, completionHandler: {
             (data, response, error) -> Void in
         
             if error != nil {
@@ -30,19 +30,17 @@ class APIManager {
                 do{
                     
                     if let json = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as? JSONArray{
-                        print(json)
+
                         
                         var author = [Author]()
                         
-                        for (_, entry) in json.enumerated(){
-                            print(entry)
-                            let entry = Author(data: entry as! JSONDictionary)// Videos class ındaki init metodunun içine etryleri atıp entrynin içine attı
-                            
+                        for (index, entry) in json.enumerated(){
+
+                            let entry = Author(data: entry as! JSONDictionary)
+                            entry.vIndices = index + 1
                             author.append(entry)
                         }
-                        let i = author.count
-                        print("Author Api Manager - total count ----> \(i)")
-                        print("")
+                        
                         DispatchQueue.global(qos:DispatchQoS.QoSClass.default).async {
                             DispatchQueue.main.async{
                                 completion(author)

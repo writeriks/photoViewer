@@ -10,6 +10,9 @@ import UIKit
 
 class DetailVC: UIViewController {
     @IBOutlet var imageview: UIImageView!
+    @IBOutlet var photoActivityIndicator: UIActivityIndicatorView!
+    @IBOutlet var overlayLabel: UILabel!
+    
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var imageViewBottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var imageViewLeadingConstraint: NSLayoutConstraint!
@@ -17,18 +20,48 @@ class DetailVC: UIViewController {
     @IBOutlet weak var imageViewTrailingConstraint: NSLayoutConstraint!
     
     var photoIndex: Int!
+    
+    var author : Author!
 
-    var imagesArray: [UIImage] = []
-    var namesArray : [String] = []
-    var currentImage = UIImage()
-    var currentName = String()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.imageview.image = currentImage
+        
+//        if author?.vImageData != nil{
+//            imageview.image = UIImage(data: author!.vImageData! as Data)
+//        }else{
+//            getImage( author!, imageView:imageview)
+//        }
+        
+        
+        photoActivityIndicator.startAnimating()
+        overlayLabel.text = "\(author!.vAuthor) - \(String(describing: author!.vIndices)) - \(author!.vWidth)x\(author!.vHeight)"
+        getImage( author!, imageView:imageview)
         scrollView.delegate = self
     }
 
+    func getImage(_ author:Author, imageView : UIImageView){
+        DispatchQueue.global(qos:DispatchQoS.QoSClass.default).async {
+            
+            let urlString = "https://unsplash.it/\(author.vWidth)/\(author.vHeight)?image=\(author.vID)"
+            //"https://unsplash.it/300/300?image=\(author.vID)"
+            
+            let data = try? Data(contentsOf: URL(string: urlString)!)
+            
+            var image : UIImage?
+            
+            if data != nil{
+                author.vImageData = data
+                image = UIImage(data: data!)
+            }
+            
+            DispatchQueue.main.async {
+                self.photoActivityIndicator.stopAnimating()
+                imageView.image = image
+            }
+        }
+    }
+    
     fileprivate func updateMinZoomScaleForSize(_ size: CGSize) {
         let widthScale = size.width / imageview.bounds.width
         let heightScale = size.height / imageview.bounds.height

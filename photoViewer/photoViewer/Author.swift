@@ -9,7 +9,8 @@
 import Foundation
 
 class Author{
-
+    
+    var vIndices = 0
     fileprivate var _vAuthor:String?
     fileprivate var _vFormat:String?
     fileprivate var _vFileName:String?
