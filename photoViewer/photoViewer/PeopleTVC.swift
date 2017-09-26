@@ -50,6 +50,7 @@ class PeopleTVC: UITableViewController{
         
         static let cellReuseIdentifier = "photoCell"
         static let segueIdentifier = "detailVC"
+        static let segueIdentifier2 = "PageViewController"
         
     }
     
@@ -70,8 +71,13 @@ class PeopleTVC: UITableViewController{
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
             let Storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let vc = Storyboard.instantiateViewController(withIdentifier: storyboard.segueIdentifier) as! DetailVC
-            vc.author = author[(indexPath as NSIndexPath).row]
-            self.navigationController?.pushViewController(vc, animated: false)
+//            let vc = Storyboard.instantiateViewController(withIdentifier: storyboard.segueIdentifier) as! DetailVC
+//            vc.currentAuthor = author[(indexPath as NSIndexPath).row]
+//            vc.authors = author
+//            self.navigationController?.pushViewController(vc, animated: false)
+        let vc = Storyboard.instantiateViewController(withIdentifier: storyboard.segueIdentifier2) as! ManagePVC
+        vc.authors = author
+        vc.currentIndex = indexPath.row
+        self.navigationController?.pushViewController(vc, animated: false)
     }
 }

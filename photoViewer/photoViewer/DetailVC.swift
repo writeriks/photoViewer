@@ -21,11 +21,17 @@ class DetailVC: UIViewController {
     
     var photoIndex: Int!
     
-    var author : Author!
-
+    var currentAuthor : Author!
+    var authors = [Author]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        for item in authors{
+            if item.vIndices == currentAuthor.vIndices{
+                print(item.vIndices)
+                print(item.vAuthor)
+            }
+        }
         
 //        if author?.vImageData != nil{
 //            imageview.image = UIImage(data: author!.vImageData! as Data)
@@ -35,8 +41,8 @@ class DetailVC: UIViewController {
         
         
         photoActivityIndicator.startAnimating()
-        overlayLabel.text = "\(author!.vAuthor) - \(String(describing: author!.vIndices)) - \(author!.vWidth)x\(author!.vHeight)"
-        getImage( author!, imageView:imageview)
+        overlayLabel.text = "\(currentAuthor!.vAuthor) - \(String(describing: currentAuthor!.vIndices)) - \(currentAuthor!.vWidth)x\(currentAuthor!.vHeight)"
+        getImage( currentAuthor!, imageView:imageview)
         scrollView.delegate = self
     }
 

@@ -13,12 +13,11 @@
 		5F4E12571F7447F80079BDD2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F4E12551F7447F80079BDD2 /* LaunchScreen.storyboard */; };
 		5F4E125F1F74502B0079BDD2 /* PeopleTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4E125E1F74502B0079BDD2 /* PeopleTVC.swift */; };
 		5F4E12631F7451440079BDD2 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4E12621F7451440079BDD2 /* PhotoCell.swift */; };
-		5F4E12651F7471180079BDD2 /* PhotoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4E12641F7471180079BDD2 /* PhotoVC.swift */; };
-		5F4E12691F75B9A10079BDD2 /* ManagePagePVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4E12681F75B9A10079BDD2 /* ManagePagePVC.swift */; };
 		5F4E12701F75DB450079BDD2 /* Author.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4E126F1F75DB450079BDD2 /* Author.swift */; };
 		5F4E12721F75DC8A0079BDD2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4E12711F75DC8A0079BDD2 /* Constants.swift */; };
 		5F4E12741F75E9970079BDD2 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4E12731F75E9970079BDD2 /* ApiManager.swift */; };
 		5F4E12761F7887140079BDD2 /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4E12751F7887140079BDD2 /* DetailVC.swift */; };
+		5F4E12781F798F3C0079BDD2 /* ManagePVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4E12771F798F3C0079BDD2 /* ManagePVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,12 +29,11 @@
 		5F4E12581F7447F80079BDD2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5F4E125E1F74502B0079BDD2 /* PeopleTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeopleTVC.swift; sourceTree = "<group>"; };
 		5F4E12621F7451440079BDD2 /* PhotoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
-		5F4E12641F7471180079BDD2 /* PhotoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoVC.swift; sourceTree = "<group>"; };
-		5F4E12681F75B9A10079BDD2 /* ManagePagePVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagePagePVC.swift; sourceTree = "<group>"; };
 		5F4E126F1F75DB450079BDD2 /* Author.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Author.swift; sourceTree = "<group>"; };
 		5F4E12711F75DC8A0079BDD2 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		5F4E12731F75E9970079BDD2 /* ApiManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
 		5F4E12751F7887140079BDD2 /* DetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
+		5F4E12771F798F3C0079BDD2 /* ManagePVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagePVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,8 +71,6 @@
 				5F4E126C1F75DA8B0079BDD2 /* Controller */,
 				5F4E126B1F75DA860079BDD2 /* View */,
 				5F4E126A1F75DA7F0079BDD2 /* Model */,
-				5F4E12681F75B9A10079BDD2 /* ManagePagePVC.swift */,
-				5F4E12641F7471180079BDD2 /* PhotoVC.swift */,
 			);
 			path = photoViewer;
 			sourceTree = "<group>";
@@ -101,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				5F4E12751F7887140079BDD2 /* DetailVC.swift */,
+				5F4E12771F798F3C0079BDD2 /* ManagePVC.swift */,
 				5F4E125E1F74502B0079BDD2 /* PeopleTVC.swift */,
 				5F4E12621F7451440079BDD2 /* PhotoCell.swift */,
 			);
@@ -202,10 +199,9 @@
 				5F4E125F1F74502B0079BDD2 /* PeopleTVC.swift in Sources */,
 				5F4E12631F7451440079BDD2 /* PhotoCell.swift in Sources */,
 				5F4E124D1F7447F70079BDD2 /* AppDelegate.swift in Sources */,
-				5F4E12651F7471180079BDD2 /* PhotoVC.swift in Sources */,
+				5F4E12781F798F3C0079BDD2 /* ManagePVC.swift in Sources */,
 				5F4E12761F7887140079BDD2 /* DetailVC.swift in Sources */,
 				5F4E12701F75DB450079BDD2 /* Author.swift in Sources */,
-				5F4E12691F75B9A10079BDD2 /* ManagePagePVC.swift in Sources */,
 				5F4E12721F75DC8A0079BDD2 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

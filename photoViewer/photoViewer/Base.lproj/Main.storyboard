@@ -142,45 +142,13 @@
             </objects>
             <point key="canvasLocation" x="1800" y="36.971830985915496"/>
         </scene>
-        <!--Page View Controller-->
-        <scene sceneID="RNi-HO-2B0">
+        <!--ManagePVC-->
+        <scene sceneID="uHU-WB-sPp">
             <objects>
-                <pageViewController storyboardIdentifier="PageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" pageSpacing="8" navigationOrientation="horizontal" spineLocation="none" id="bbD-PH-f9t" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="HIq-gS-seC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <pageViewController storyboardIdentifier="PageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" pageSpacing="8" navigationOrientation="horizontal" spineLocation="none" id="DdJ-g7-Yo7" customClass="ManagePVC" customModule="photoViewer" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qNL-b1-5kA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1800" y="747"/>
-        </scene>
-        <!--PhotoVC-->
-        <scene sceneID="QRl-El-5O4">
-            <objects>
-                <viewController storyboardIdentifier="PhotoVC" id="VLo-rR-zJy" customClass="PhotoVC" customModule="photoViewer" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="fSb-cC-Fzf"/>
-                        <viewControllerLayoutGuide type="bottom" id="gWw-Vn-BlC"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Cq9-G4-FLW">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m3P-qG-qXd">
-                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
-                            </scrollView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="m3P-qG-qXd" firstAttribute="leading" secondItem="Cq9-G4-FLW" secondAttribute="leading" id="POR-fo-Ddf"/>
-                            <constraint firstAttribute="trailing" secondItem="m3P-qG-qXd" secondAttribute="trailing" id="YiW-qW-HSb"/>
-                            <constraint firstItem="gWw-Vn-BlC" firstAttribute="top" secondItem="m3P-qG-qXd" secondAttribute="bottom" id="lod-2B-q8b"/>
-                            <constraint firstItem="m3P-qG-qXd" firstAttribute="top" secondItem="fSb-cC-Fzf" secondAttribute="bottom" id="wcl-wa-xOG"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="scrollView" destination="m3P-qG-qXd" id="55X-Ty-GUg"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Lmx-0g-EzW" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3546" y="-507"/>
+            <point key="canvasLocation" x="2604" y="38"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="OKK-7B-ipR">
