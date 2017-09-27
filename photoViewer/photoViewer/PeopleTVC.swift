@@ -7,8 +7,10 @@
 //
 
 import UIKit
-
+import CoreData
 class PeopleTVC: UITableViewController{
+    
+    
     
     var author = [Author]()
     
@@ -16,7 +18,8 @@ class PeopleTVC: UITableViewController{
         super.viewDidLoad()
         self.tableView.dataSource = self
         self.tableView.delegate = self
-
+        
+        
         
         if author.count > 0 {
             print("do not refresh API")
@@ -49,19 +52,20 @@ class PeopleTVC: UITableViewController{
     fileprivate struct storyboard{
         
         static let cellReuseIdentifier = "photoCell"
-        static let segueIdentifier = "detailVC"
-        static let segueIdentifier2 = "PageViewController"
-        
+        static let segueIdentifier = "PageViewController"
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: storyboard.cellReuseIdentifier, for: indexPath) as! PhotoCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: storyboard.cellReuseIdentifier, for: indexPath) as! PhotoCell        
         cell.tag = indexPath.row
-        DispatchQueue.main.async {
+        DispatchQueue.main.async {() -> Void in
             if(cell.tag == indexPath.row) {
-                cell.author = self.author[(indexPath as NSIndexPath).row]
+                    if let updateCell = tableView.cellForRow(at: indexPath) as? PhotoCell {
+                        updateCell.author = self.author[(indexPath as NSIndexPath).row]
+                    }
             }
         }
+        
         return cell
     }
     
@@ -71,11 +75,7 @@ class PeopleTVC: UITableViewController{
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
             let Storyboard = UIStoryboard(name: "Main", bundle: nil)
-//            let vc = Storyboard.instantiateViewController(withIdentifier: storyboard.segueIdentifier) as! DetailVC
-//            vc.currentAuthor = author[(indexPath as NSIndexPath).row]
-//            vc.authors = author
-//            self.navigationController?.pushViewController(vc, animated: false)
-        let vc = Storyboard.instantiateViewController(withIdentifier: storyboard.segueIdentifier2) as! ManagePVC
+        let vc = Storyboard.instantiateViewController(withIdentifier: storyboard.segueIdentifier) as! ManagePVC
         vc.authors = author
         vc.currentIndex = indexPath.row
         self.navigationController?.pushViewController(vc, animated: false)

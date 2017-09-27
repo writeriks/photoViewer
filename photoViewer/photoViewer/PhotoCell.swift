@@ -8,10 +8,13 @@
 
 import UIKit
 
+
 class PhotoCell: UITableViewCell {
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var photoImage: UIImageView!
-
+    
+    var imageCache = NSCache<AnyObject, AnyObject>()
+    
     var author:Author?{
         didSet{
             updateCell()
@@ -23,21 +26,19 @@ class PhotoCell: UITableViewCell {
     }
     
     func updateCell(){
+        let urlString = "https://unsplash.it/300/300?image=\(author!.vID)"
         nameLabel.text = "\(author!.vAuthor) \(String(describing: author!.vIndices))"
-        photoImage.image = UIImage(named: "placeholder")
-        if author?.vImageData != nil{
-            photoImage.image = UIImage(data: author!.vImageData! as Data)
+        
+        if let image = imageCache.object(forKey: urlString as AnyObject ) {
+            photoImage.image = image as? UIImage
         }else{
-            getImage( author!, imageView:photoImage)
+            getImage(author!, imageView: photoImage, urlString: urlString)
         }
+        
     }
-    
-    func getImage(_ author:Author, imageView : UIImageView ){
+        
+    func getImage(_ author:Author, imageView : UIImageView, urlString:String ){
         DispatchQueue.global(qos:DispatchQoS.QoSClass.default).async {
-            
-            let urlString = "https://unsplash.it/300/300?image=\(author.vID)"
-            //"https://unsplash.it/\(author.vWidth)/\(author.vHeight))?image=\(author.vID)"
-
             
             let data = try? Data(contentsOf: URL(string: urlString)!)
             
@@ -46,6 +47,7 @@ class PhotoCell: UITableViewCell {
             if data != nil{
                 author.vImageData = data
                 image = UIImage(data: data!)
+                self.imageCache.setObject(image!, forKey: urlString as AnyObject)
             }
             
             DispatchQueue.main.async {

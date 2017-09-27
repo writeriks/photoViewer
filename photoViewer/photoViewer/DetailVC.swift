@@ -33,13 +33,6 @@ class DetailVC: UIViewController {
             }
         }
         
-//        if author?.vImageData != nil{
-//            imageview.image = UIImage(data: author!.vImageData! as Data)
-//        }else{
-//            getImage( author!, imageView:imageview)
-//        }
-        
-        
         photoActivityIndicator.startAnimating()
         overlayLabel.text = "\(currentAuthor!.vAuthor) - \(String(describing: currentAuthor!.vIndices)) - \(currentAuthor!.vWidth)x\(currentAuthor!.vHeight)"
         getImage( currentAuthor!, imageView:imageview)
@@ -50,7 +43,6 @@ class DetailVC: UIViewController {
         DispatchQueue.global(qos:DispatchQoS.QoSClass.default).async {
             
             let urlString = "https://unsplash.it/\(author.vWidth)/\(author.vHeight)?image=\(author.vID)"
-            //"https://unsplash.it/300/300?image=\(author.vID)"
             
             let data = try? Data(contentsOf: URL(string: urlString)!)
             

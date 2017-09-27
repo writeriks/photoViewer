@@ -19,7 +19,6 @@ class ManagePVC: UIPageViewController {
         if let viewControllers = viewDetailVC(currentIndex ?? 0 ){
             let viewControllers = [viewControllers]
             
-            // 2
             setViewControllers(
                 viewControllers,
                 direction: .forward,
@@ -41,8 +40,6 @@ class ManagePVC: UIPageViewController {
         page.photoIndex = index
         return page
     }
-    
-
 }
 extension ManagePVC: UIPageViewControllerDataSource {
     
